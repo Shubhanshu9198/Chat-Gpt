@@ -1,0 +1,120 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #282c34;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: white;
+}
+
+/* Each box will be responsive */
+.box {
+  display: flex;
+  flex: 1 1 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+
+@media (min-width: 768px) {
+  .box {
+    flex: 1 1 50%;
+  }
+} 
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 10px royalblue;
+  overflow: hidden;
+  animation: myAnimation 3s infinite ease-in-out;
+}
+@keyframes myAnimation {
+  0% { box-shadow: 5px 5px 10px royalblue; }
+  33% { box-shadow: 5px 5px 10px rgb(225, 65, 118); }
+  66% { box-shadow: 5px 5px 10px rgb(65, 225, 108); }
+  100% { box-shadow: 5px 5px 10px rgb(225, 65, 166); }
+}
+
+textarea {
+  width: 90%;
+  min-height: 150px;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 10px white;
+  background-color: transparent;
+  color: white;
+  padding: 20px;
+  font-size: 1rem;
+  resize: vertical;
+  transition: transform 0.2s ease-in-out;
+}
+
+textarea::after {
+  content: '|';
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+textarea::-webkit-scrollbar {
+  display: none;
+}
+
+button {
+  width: 60%;
+  max-width: 200px;
+  border: none;
+  outline: none;
+  background-color: rgba(17, 93, 236, 0.829);
+  color: white;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+button:hover {
+  transform: scale(1.1);
+  background-color: rgb(31, 36, 131);
+  box-shadow: 5px 5px 10px royalblue;
+}
+
+.pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+.pic:hover {
+  transform: scale(1.2) rotate(-360deg);
+}
+
+.label {
+  font-size: 1.2rem;
+}
+
+p {
+  transition: transform 0.3s ease-in-out;
+}
+p:hover {
+  transform: scale(1.5) rotate(-360deg);
+  color: rgb(253, 248, 253);
+}
+
+/* Optional: dark scroll for textarea on mobile */
+textarea {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
